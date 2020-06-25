@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from django.shortcuts import render, get_object_or_404
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -15,3 +16,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
